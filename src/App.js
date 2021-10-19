@@ -13,45 +13,46 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Register from './components/Register/Register';
 import AuthProvider from './context/AuthProvider';
+import useFirebase from './hooks/useFirebase';
 
 
 function App() {
   return (
     <div >
-      {/* <AuthProvider> */}
-      <Router>
+      <AuthProvider>
+        <Router>
 
-        <Header></Header>
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/home">
-            <Home></Home>
-          </Route>
-          <Route path='/services'>
-            <Services></Services>
-          </Route>
-          <Route path='/about'>
-            <AboutUs></AboutUs>
-          </Route>
-          <Route path='/blog'>
-            <Blog></Blog>
-          </Route>
-          <Route path='/login'>
-            <Login></Login>
-          </Route>
-          <Route path='/register'>
-            <Register></Register>
-          </Route>
+          <Header></Header>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            <Route path='/services'>
+              <Services></Services>
+            </Route>
+            <Route path='/about'>
+              <AboutUs></AboutUs>
+            </Route>
+            <Route path='/blog'>
+              <Blog></Blog>
+            </Route>
+            <Route path='/login'>
+              <Login></Login>
+            </Route>
+            <Route path='/register'>
+              <Register></Register>
+            </Route>
 
-          <Route path='*'>
-            <NotFound></NotFound>
-          </Route>
-        </Switch>
-        <Footer></Footer>
-      </Router>
-      {/* </AuthProvider> */}
+            <Route path='*'>
+              <NotFound></NotFound>
+            </Route>
+          </Switch>
+          <Footer></Footer>
+        </Router>
+      </AuthProvider>
 
     </div>
   );

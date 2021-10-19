@@ -1,10 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './Register.css';
 import { faGithubSquare, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import useAuth from '../../hooks/useAuth';
 
 const Register = () => {
+    const { signInUsingGoogle } = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from;
+
+    const handleGoogleLogin = () => {
+        signInUsingGoogle()
+            .then(result => {
+                history.push(redirect_uri);
+            })
+    }
     return (
         <div>
             <h3 className='text-center'>Register Now</h3>
@@ -33,7 +45,7 @@ const Register = () => {
                     </div>
 
 
-                    <button type="submit" className="btn button-submit mb-5">Register Booking</button>
+                    <button onClick={handleGoogleLogin} type="submit" className="btn button-submit mb-5">Register Booking</button>
 
                     <p >Already Registered? Then go to <Link to='/login'>Login</Link></p>
 

@@ -1,9 +1,21 @@
 import { faGithubSquare, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
+    const { signInUsingGoogle } = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from;
+
+    const handleGoogleLogin = () => {
+        signInUsingGoogle()
+            .then(result => {
+                history.push(redirect_uri);
+            })
+    }
     return (
         <div>
             <h3 className='text-center pt-5'>Login</h3>
@@ -34,7 +46,7 @@ const Login = () => {
             <p className='text-center fw-bold fs-5'>you may get on touch with</p>
 
             <div className='text-center pb-5 d-flex align-items-center justify-content-center '>
-                <button className='icon fw-bold me-2'> <FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon></button>
+                <button onClick={handleGoogleLogin} className='icon fw-bold me-2'> <FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon></button>
                 <button className='icon fw-bold'> <FontAwesomeIcon icon={faGithubSquare}></FontAwesomeIcon></button>
             </div>
         </div>
