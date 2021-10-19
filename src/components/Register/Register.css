@@ -1,0 +1,13 @@
+.form{
+   
+    padding-top: 50px;
+    width: 1200px;
+    margin-left: 80px;
+}
+
+.button-submit{
+    padding : 7px  16px;
+    background-color: #43c4d8; 
+    color: azure;
+    font-weight: 500;
+}
