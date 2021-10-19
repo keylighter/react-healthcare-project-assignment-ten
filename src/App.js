@@ -12,12 +12,13 @@ import Blog from './components/Blog/Blog';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Register from './components/Register/Register';
+import AuthProvider from './context/AuthProvider';
 
 
 function App() {
   return (
     <div >
-
+      {/* <AuthProvider> */}
       <Router>
 
         <Header></Header>
@@ -50,7 +51,7 @@ function App() {
         </Switch>
         <Footer></Footer>
       </Router>
-
+      {/* </AuthProvider> */}
 
     </div>
   );

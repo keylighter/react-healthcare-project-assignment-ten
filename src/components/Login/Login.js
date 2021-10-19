@@ -1,3 +1,5 @@
+import { faGithubSquare, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -6,9 +8,9 @@ const Login = () => {
         <div>
             <h3 className='text-center pt-5'>Login</h3>
 
-            <div className="form text-center">
+            <div className="form d-flex align-items-center justify-content-center">
 
-                <form className='w-50  ps-5 ms-5 '>
+                <form onSubmit='' className='w-50  ps-5 ms-5 '>
                     <div className="row mb-3">
                         <label for="inputEmail3" className="col-sm-2 col-form-label fw-bold ">Email</label>
                         <div className="col-sm-10">
@@ -28,6 +30,12 @@ const Login = () => {
                     <p >New in Medico ? Please <Link to='/register'>Register</Link></p>
                 </form>
 
+            </div>
+            <p className='text-center fw-bold fs-5'>you may get on touch with</p>
+
+            <div className='text-center pb-5 d-flex align-items-center justify-content-center '>
+                <button className='icon fw-bold me-2'> <FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon></button>
+                <button className='icon fw-bold'> <FontAwesomeIcon icon={faGithubSquare}></FontAwesomeIcon></button>
             </div>
         </div>
     );
