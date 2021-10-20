@@ -5,42 +5,12 @@ import './Register.css';
 import { faGithubSquare, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import useAuth from '../../hooks/useAuth';
 
-import { createUserWithEmailAndPassword, onAuthStateChanged, signOut, getAuth } from "firebase/auth";
-import initializeAuthentication from "./../Firebase/firebase.init";
+
 
 
 
 const Register = () => {
 
-    // email registration firebase 
-    const [user, setUser] = useState({});
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-
-
-    const auth = getAuth();
-
-
-    const handleNameChange = e => {
-        setName(e.target.value);
-    }
-    const handleEmailChange = e => {
-        setEmail(e.target.value);
-    }
-
-    const handlePasswordChange = e => {
-        setPassword(e.target.value)
-    }
-
-    const registerNewUser = (email, password) => {
-        createUserWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                const emailUser = result.user;
-                setUser(emailUser);
-
-            })
-    }
 
 
     const { signInUsingGoogle, signInUsingGithub } = useAuth();
