@@ -1,0 +1,21 @@
+.card{
+    background-color: #ffffff;
+}
+
+.service-img{
+    height: 350px;
+
+}
+
+.detail-button{
+    padding: 9px 10px;
+    border-radius: 7px;
+    font-weight: 500;
+    color: azure;
+    background-color:   #43c4d8;
+}
+
+.detail-button:hover{
+    color:#43c4d8 ;
+    background-color: azure  ;
+}
