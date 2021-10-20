@@ -72,11 +72,11 @@ const Footer = () => {
                         <div className="right-footer-container">
                             <h3>Sign up for <span className='foot-span'>HEALTH TIPS!!!</span></h3>
                             <input
-                                className="footer-input"
+                                className="footer-input mt-3 "
                                 type="text"
                                 placeholder="Enter Email"
                             />
-                            <div className="phone d-flex  justify-content-center mt-4">
+                            <div className="phone d-flex   mt-4">
                                 <div className="foot-icon me-2">
                                     <FontAwesomeIcon icon={faPhoneVolume} />
                                 </div>
@@ -84,7 +84,7 @@ const Footer = () => {
                                     <h6>+ 00 88557744552</h6>
                                 </div>
                             </div>
-                            <div className="map d-flex  justify-content-center">
+                            <div className="map d-flex  ">
                                 <div className="foot-icon me-2">
                                     <FontAwesomeIcon icon={faMapMarkedAlt} />
                                 </div>

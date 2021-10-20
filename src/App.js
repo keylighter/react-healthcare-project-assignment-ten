@@ -22,35 +22,49 @@ function App() {
       <AuthProvider>
         <Router>
 
-          <Header></Header>
+
           <Switch>
             <Route exact path="/">
+              <Header></Header>
               <Home></Home>
+              <Footer></Footer>
             </Route>
             <Route path="/home">
+              <Header></Header>
               <Home></Home>
+              <Footer></Footer>
             </Route>
             <Route path='/services'>
+              <Header></Header>
               <Services></Services>
+              <Footer></Footer>
             </Route>
             <Route path='/about'>
+              <Header></Header>
               <AboutUs></AboutUs>
+              <Footer></Footer>
             </Route>
             <Route path='/blog'>
+              <Header></Header>
               <Blog></Blog>
+              <Footer></Footer>
             </Route>
             <Route path='/login'>
+              <Header></Header>
               <Login></Login>
+              <Footer></Footer>
             </Route>
             <Route path='/register'>
+              <Header></Header>
               <Register></Register>
+              <Footer></Footer>
             </Route>
 
             <Route path='*'>
               <NotFound></NotFound>
             </Route>
           </Switch>
-          <Footer></Footer>
+
         </Router>
       </AuthProvider>
 

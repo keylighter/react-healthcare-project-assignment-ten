@@ -1,0 +1,10 @@
+.blog-container{
+    background-color: rgb(185, 193, 194);
+}
+
+.article-container{
+    background-color: rgb(231, 243, 250);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}

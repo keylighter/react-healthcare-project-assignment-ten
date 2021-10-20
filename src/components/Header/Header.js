@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import './Header.css'
 
@@ -19,10 +20,12 @@ const Header = () => {
 
                 </div>
                 <div className="col-md-6">
-                    <button className="mt-3 head-button me-3">About Us</button>
-
-                    <button className="mt-3 head-button ms-3">Book Now</button>
-
+                    <Link to='/about'>
+                        <button className="mt-3 head-button me-3">About Us</button>
+                    </Link>
+                    <Link to='/register'>
+                        <button className="mt-3 head-button ms-3">Book Now</button>
+                    </Link>
                 </div>
             </div>
         </div>
