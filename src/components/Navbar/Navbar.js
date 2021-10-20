@@ -5,6 +5,7 @@ import './Navbar.css'
 
 const Navbar = () => {
     const { user, logOut } = useAuth();
+
     return (
         <div className=''>
             <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -16,11 +17,12 @@ const Navbar = () => {
                                 Medico
                             </a>
                         </Link>
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
+
                     </div>
-                    <div className="pe-5 " id="navbarNav">
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="pe-5  collapse navbar-collapse " id="navbarNav">
                         <ul className="navbar-nav">
                             <Link to="/home">
                                 <li className="nav-item">
@@ -42,21 +44,17 @@ const Navbar = () => {
                                     <a className="nav-link fw-bold fs-5" href="#">Blog</a>
                                 </li>
                             </Link>
-                            {user.email && <span style={{ color: 'white' }}>Hello {user.displayName} </span>}
+
                             {
                                 user.email ?
-                                    <button onClick={logOut}>log out</button>
+                                    <button className='nav-login' onClick={logOut}>log out</button>
                                     :
                                     <Link to="/register" >
                                         <li className="nav-item ">
                                             <a className="nav-link nav-login fw-bold fs-5" href="#">Book Now</a>
                                         </li>
                                     </Link>}
-                            {/* <Link to="/register" >
-                                <li className="nav-item ">
-                                    <a className="nav-link nav-login fw-bold fs-5" href="#">Book Now</a>
-                                </li>
-                            </Link> */}
+
 
                         </ul>
                     </div>
